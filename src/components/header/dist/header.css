@@ -1,0 +1,50 @@
+.logo {
+    width: 80px;
+    height: auto;
+    font-size: .85714286rem;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    display: flex;
+    margin: 1 rem 0;
+    color: rgba(0,0,0,.87);
+    align-items: center;
+    position: fixed;
+    z-index: 101;
+    margin: 0;
+    width: 100%;
+    font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+    background: #fff;
+    font-weight: 400;
+    border: 1 px solid rgba(34,36,38,.15);
+    -webkit-box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+    box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+    border-radius: 0.28571429 rem;
+    min-height: 2.85714286 em;
+}
+.left-header{
+    display: flex;
+    justify-content: space-between;
+    min-width: 20%;
+    margin: 0 20px;
+
+}
+.right-header{
+    display: flex;
+    justify-content: space-between;
+    min-width: 25%;
+    margin: 0 20px;
+    align-items: baseline;
+}
+.btn{
+    transition: transform 0.2s ease 0s;
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 15px -3px;
+    background: rgb(24, 198, 131) !important;
+    margin: 0px auto;
+    color: #fff;
+    text-shadow: none;
+    border-radius: 10em;
+    font-weight: 700;
+}

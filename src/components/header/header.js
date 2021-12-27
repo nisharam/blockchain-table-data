@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import { withRouter, NavLink } from 'react-router-dom'
+import './dist/header.css';
+import { SearchOutlined,SettingFilled } from '@ant-design/icons';
+import { Button } from 'antd';
 // import { connect } from 'react-redux';
 // import './header.css';
 // import { handleDrawerToggleChange } from '../../../actions/index';
@@ -11,14 +13,30 @@ class Header extends Component{
         navMenu[i].classList.toggle("Navbar__ToggleShow");
     }
 }
-// handleDrawerToggle(e){
-//     this.props.dispatch(handleDrawerToggleChange(!this.props.toggleStatus));
-//   }
-  componentWillMount(){
-  }
+
     render(){
         return(
-      <div>header</div>
+          <div className="header">
+          <div className="left-header" >
+              <div>Coins</div>
+              <div>Exchange</div>
+              <div>Swap</div>
+          </div>
+          <div className="center-header" >
+              <img className="logo" src="https://coincap.io/static/logos/black.svg" />
+          </div>
+          <div className="right-header" >
+              <div>
+              <SearchOutlined />
+              </div>
+              <div>
+              <SettingFilled />
+              </div>
+              <div>
+              <Button className="btn">Connect Wallet</Button>
+              </div>
+          </div>
+      </div>
         )
     }
 }
