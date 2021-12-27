@@ -1,34 +1,34 @@
-import {GET_DATA_REQUEST,GET_DATA_SUCCESS,GET_DATA_FAILED} from '../constants/table.constant';
+import {GET_COIN_TABLE_DATA_REQUEST,GET_COIN_TABLE_DATA_SUCCESS,GET_COIN_TABLE_DATA_FAILED} from '../constants/table.constant';
 import axios from 'axios';
-export function getDataRequest() {
+export function getCoinTableDataRequest() {
     return {
-       type: GET_DATA_REQUEST,
+       type: GET_COIN_TABLE_DATA_REQUEST,
     }
  }
- export function getDataSuccess(data) {
+ export function getCoinTableDataSuccess(data) {
     return {
-       type: GET_DATA_SUCCESS,
+       type: GET_COIN_TABLE_DATA_SUCCESS,
        payload:data 
     }
  }
- export function getDataFailed(error) {
+ export function getCoinTableDataFailed(error) {
     return {
-       type: GET_DATA_FAILED,
+       type: GET_COIN_TABLE_DATA_FAILED,
        payload:error
     }
  }
 
- export const getData = () =>{
+ export const getCoinTableData = () =>{
      return (dispatch) =>{
-         dispatch(getDataRequest())
+         dispatch(getCoinTableDataRequest())
         axios.get('https://api.coincap.io/v2/assets')
         .then(response => {
             const coinData = response.data.data
-            dispatch(getDataSuccess(coinData))
+            dispatch(getCoinTableDataSuccess(coinData))
         })
         .catch(errormsg =>{
             const error = errormsg.message
-            dispatch(getDataFailed(error))
+            dispatch(getCoinTableDataFailed(error))
         } )
      }
  }

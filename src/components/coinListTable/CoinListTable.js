@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table, Tag, Space, Button } from 'antd';
 import 'antd/dist/antd.css';
-import { getData } from '../../actions/table.action'
+import { getCoinTableData } from '../../actions/table.action'
 import { connect } from "react-redux";
 import './dist/coinListTable.css'
 function CoinListTable({ fetchcoins, data }) {
@@ -9,6 +9,8 @@ function CoinListTable({ fetchcoins, data }) {
         fetchcoins()
     }, [])
     const [coinDataIndex, setCoinDataIndex] = React.useState(50)
+    
+    
     function convertToInternationalCurrencySystem(num) {
 
         let number = parseInt(num);
@@ -48,7 +50,7 @@ function CoinListTable({ fetchcoins, data }) {
             dataIndex: 'name',
             key: 'name',
             render: (text, record) => <div style={{ 'display': 'flex' }} ><img height="40px" style={{
-                'padding-right': '10px'
+                'paddingRight': '10px'
             }} src={'https://assets.coincap.io/assets/icons/' + record.symbol.toLowerCase() + '@2x.png'} /><div><div>{text}</div><div>{record.symbol}</div></div></div>,
         },
         {
@@ -94,12 +96,12 @@ function CoinListTable({ fetchcoins, data }) {
 
     ];
     function updateTable() {
-        setCoinDataIndex(coinDataIndex + 50)
+        setCoinDataIndex(coinDataIndex + 20)
     }
     return (
             <div className="table">
                 {data?.errorMessage
-                    ? <h2>Please Try again</h2>
+                    ? <h2>Something went Wrong. Please try again!!!</h2>
                     : <Table columns={columns} dataSource={data?.data?.slice(0, coinDataIndex)} loading={data?.loading} pagination={false}
                     />
 
@@ -115,7 +117,7 @@ function mapStateToProps(state) {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        fetchcoins: () => dispatch(getData())
+        fetchcoins: () => dispatch(getCoinTableData())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(CoinListTable);

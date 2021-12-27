@@ -3,6 +3,7 @@ import './dist/tableBanner.css'
 import CoinListTable from '../coinListTable/CoinListTable' 
 function TableBanner() {
     return (
+        <div>
         <div className="bottom">
 <div className="content-block">
 <div className="content" >      
@@ -30,8 +31,9 @@ function TableBanner() {
 <div>41.4%</div>
 </div>
 </div>
-<CoinListTable className="table" />
       </div>
+<CoinListTable className="table" />
+</div>
     )
 }
 

@@ -9,6 +9,7 @@ function RouteComponent()  {
             <div>
                 <Header />
             <Routes>
+                <Route path="/" element={<TableBanner />} />
             <Route path="/all/coins" element={<TableBanner />} />
             </Routes>
             </div>
