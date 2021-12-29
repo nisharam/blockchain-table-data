@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+#git files
+/.github
+
 # testing
 /coverage
 
@@ -21,3 +24,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#firebase files
+.firebaserc
+firebase.json
+
